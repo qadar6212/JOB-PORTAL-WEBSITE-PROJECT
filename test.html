@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Post a Job — Companies</title>
+  <!-- Reuse your main site stylesheet (styles.css) and load lightweight forms styles -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="forms.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="logo">
+        <svg width="40" height="40" viewBox="0 0 24 24" aria-hidden="true">
+          <rect width="24" height="24" rx="4" fill="var(--color-3)"/>
+        </svg>
+        <span class="brand">Acme Careers</span>
+      </div>
+      <nav class="top-nav" aria-label="Main navigation">
+        <a class="nav-link" href="jobs.html">Jobs</a>
+        <a class="nav-link" href="companies.html">Companies</a>
+        <a class="nav-link active" href="post-job.html">Post a Job</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main">
+    <h1 class="page-title">Post a Job</h1>
+    <p class="intro">Use this form to submit a job posting. Choose "Send via Email" to open your mail client or "Submit to Site" to post to our server (requires PHP on the host).</p>
+
+    <!-- Single form with two submit options:
+         - "Send via Email" uses form attributes on the submit button (mailto)
+         - "Submit to Site" posts to post-job-handler.php (server-side)
+         Note: both buttons submit the same form HTML.
+    -->
+    <form class="post-form" method="post" action="post-job-handler.php" enctype="multipart/form-data" novalidate>
+      <fieldset>
+        <legend>Company information</legend>
+
+        <div class="form-row">
+          <label for="company_name">Company name</label>
+          <input id="company_name" name="company_name" required />
+        </div>
+
+        <div class="form-row">
+          <label for="company_contact">Contact email (for replies)</label>
+          <input id="company_contact" name="company_contact" type="email" required />
+        </div>
+
+        <div class="form-row">
+          <label for="company_website">Website (optional)</label>
+          <input id="company_website" name="company_website" type="url" placeholder="https://example.com" />
+        </div>
+
+        <div class="form-row">
+          <label for="company_location">Headquarters / Primary location</label>
+          <input id="company_location" name="company_location" placeholder="City, Country or Remote" />
+        </div>
+
+        <div class="form-row">
+          <label for="company_size">Company size (e.g. 50 employees)</label>
+          <input id="company_size" name="company_size" placeholder="e.g. 150 employees" />
+        </div>
+
+        <div class="form-row">
+          <label for="company_logo_url">Logo URL (optional)</label>
+          <input id="company_logo_url" name="company_logo_url" type="url" placeholder="https://..." />
+          <small class="hint">Public URL to an image file (used to show on company profile).</small>
+        </div>
+
+        <div class="form-row">
+          <label for="company_description">Short company description</label>
+          <textarea id="company_description" name="company_description" rows="4" placeholder="Brief description for directory"></textarea>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Job information</legend>
+
+        <div class="form-row">
+          <label for="job_title">Job title</label>
+          <input id="job_title" name="job_title" required />
+        </div>
+
+        <div class="form-row">
+          <label for="job_status">Status</label>
+          <select id="job_status" name="job_status">
+            <option value="open" selected>Open</option>
+            <option value="coming-soon">Coming Soon</option>
+            <option value="closed">Closed</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="job_location">Job location</label>
+          <input id="job_location" name="job_location" placeholder="City, Remote, etc." />
+        </div>
+
+        <div class="form-row">
+          <label for="employment_type">Employment type</label>
+          <input id="employment_type" name="employment_type" placeholder="Full-time / Part-time / Contract" />
+        </div>
+
+        <div class="form-row small-grid">
+          <div>
+            <label for="salary">Salary / Rate</label>
+            <input id="salary" name="salary" placeholder="$90k–120k or $55/hr" />
+          </div>
+          <div>
+            <label for="hours">Hours</label>
+            <input id="hours" name="hours" placeholder="e.g. 40 hrs/week" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="job_description">Job description</label>
+          <textarea id="job_description" name="job_description" rows="6" placeholder="Full job description, responsibilities, requirements, benefits"></textarea>
+        </div>
+
+        <div class="form-row">
+          <label for="apply_contact">Apply email / link</label>
+          <input id="apply_contact" name="apply_contact" placeholder="jobs@company.example.com or https://apply.example.com" />
+        </div>
+
+        <div class="form-row">
+          <label for="additional_notes">Additional notes (optional)</label>
+          <textarea id="additional_notes" name="additional_notes" rows="3" placeholder="Anything else the admin should know"></textarea>
+        </div>
+      </fieldset>
+
+      <div class="form-actions">
+        <!-- Submit to server endpoint (default form action). Works when post-job-handler.php exists on the server. -->
+        <button type="submit" class="btn">Submit to Site</button>
+
+        <!-- Use mailto via the button's formaction. enctype=text/plain helps include fields as mail body.
+             Note: Some browsers/clients behave differently with mailto forms. This is best-effort. -->
+        <button type="submit" class="btn-outline" formaction="mailto:jobs@your-site.example.com" formmethod="post" formenctype="text/plain">
+          Send via Email
+        </button>
+
+        <a class="btn-ghost" href="companies.html">Cancel</a>
+      </div>
+
+      <p class="note">If you choose "Send via Email" your mail client will open with the filled form contents — please verify the email and send it. For server submissions, the site will email the admin address and show a confirmation page (requires server PHP).</p>
+    </form>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">© 2026 Acme Careers</div>
+  </footer>
+</body>
+</html>
