@@ -1,0 +1,15 @@
+<svg width="300" height="100" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon (same as above, smaller) -->
+  <circle cx="40" cy="50" r="25" fill="none" stroke="#4988C4" stroke-width="4"></circle>
+  <path d="M15,60 C25,75 55,25 65,40" stroke="#1C4D8D" stroke-width="3" fill="none"></path>
+  <rect x="30" y="40" width="20" height="12" rx="2" ry="2" fill="#0F2854"></rect>
+  <rect x="34" y="34" width="12" height="6" rx="1" ry="1" fill="#4988C4"></rect>
+  <circle cx="40" cy="44" r="2" fill="#BDE8F5"></circle>
+  <rect x="39" y="46" width="2" height="5" fill="#BDE8F5"></rect>
+
+  <!-- Text -->
+  <text x="80" y="60" font-family="Arial, sans-serif" font-size="36" font-weight="bold">
+    <tspan fill="#0F2854">Job</tspan>
+    <tspan fill="#1C4D8D">Nest</tspan>
+  </text>
+</svg>

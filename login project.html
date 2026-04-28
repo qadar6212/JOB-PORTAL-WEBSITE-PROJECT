@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Modern Auth</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI, sans-serif;
+}
+
+:root{
+    --c1:#eaf6ff;
+    --c2:#4988C4;
+    --c3:#00e5ff;
+    --text:#fff;
+}
+
+body{
+    height:100vh;
+}
+
+.page{
+    min-height:100vh;
+    background:linear-gradient(135deg,var(--c1),var(--c2));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--text);
+}
+
+.card{
+    width:330px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(15px);
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+
+.card input[type="checkbox"]{
+    display:none;
+}
+
+.form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.form h2{
+    text-align:center;
+}
+
+.form input{
+    padding:12px;
+    border-radius:8px;
+    border:none;
+    outline:none;
+}
+
+button{
+    padding:12px;
+    background:linear-gradient(135deg,var(--c2),var(--c3));
+    border:none;
+    color:#fff;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+p{
+    text-align:center;
+    font-size:14px;
+}
+
+label{
+    cursor:pointer;
+    color:var(--c3);
+    font-weight:bold;
+}
+
+.forgot{
+    text-align:right;
+    font-size:13px;
+}
+
+.social{
+    display:flex;
+    gap:10px;
+    margin-top:10px;
+}
+
+.social button{
+    flex:1;
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    font-size:14px;
+    cursor:pointer;
+    color:#fff;
+}
+
+.social i{
+    margin-right:8px;
+}
+
+.google{
+    background:#db4437;
+}
+
+.facebook{
+    background:#1877f2;
+}
+
+.register,
+.forgot-box{
+    display:none;
+}
+
+#switch:checked ~ .login{
+    display:none;
+}
+#switch:checked ~ .register{
+    display:flex;
+}
+
+#forgot:checked ~ .login{
+    display:none;
+}
+#forgot:checked ~ .forgot-box{
+    display:flex;
+}
+</style>
+</head>
+
+<body>
+
+
+
+<div class="page">
+
+<div class="card">
+
+    <input type="checkbox" id="switch">
+    <input type="checkbox" id="forgot">
+
+    <div class="form login">
+        <h2>Login</h2>
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+
+        <label for="forgot" class="forgot">Forgot password?</label>
+
+        <button>Login</button>
+
+        <div class="social">
+            <button class="google">
+                <i class="fa-brands fa-google"></i> Google
+            </button>
+            <button class="facebook">
+                <i class="fa-brands fa-facebook-f"></i> Facebook
+            </button>
+        </div>
+
+        <p>Don't have account?
+            <label for="switch">Register</label>
+        </p>
+    </div>
+
+    <div class="form register">
+        <h2>Register</h2>
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+
+        <button> <a href="job apply test.html">Register </a></button>
+        <p>Already have account?
+            <label for="switch">Login</label>
+        </p>
+    </div>
+
+    <div class="form forgot-box">
+        <h2>Reset Password</h2>
+        <input type="email" placeholder="Enter your email">
+        <button>Send Reset Link</button>
+        <p>
+            <label for="forgot">Back to Login</label>
+        </p>
+    </div>
+
+</div>
+</div>
+
+</body>
+</html>

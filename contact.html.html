@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Job Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f4f7f8;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: #0a2e6e; /* Midab kala duwan */
+            color: #fff;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        header{
+        position: fixed;
+        top: 0%;
+        right: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        }
+        body{
+  padding-top: 80px; /* ku hagaaji inta header-kaagu dheer yahay */
+}
+        
+        header .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 1em;
+            transition: 0.3s;
+        }
+
+        header nav a:hover {
+            color: #f4d03f; /* hover color */
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 50px auto;
+            gap: 40px;
+        }
+
+        .contact-info, .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            animation: fadeIn 1s ease-in;
+        }
+
+        .contact-info h2, .contact-form h2 {
+            color: #0a2e6e;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            font-size: 1em;
+        }
+
+        .contact-info i {
+            color: #0a2e6e;
+            margin-right: 10px;
+        }
+
+        /* Form */
+        .contact-form form {
+            display: grid;
+            gap: 20px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 1em;
+            transition: 0.3s;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: #0a2e6e;
+            outline: none;
+            box-shadow: 0 0 10px rgba(10,46,110,0.2);
+        }
+
+        .contact-form button {
+            background: #0a2e6e;
+            color: #fff;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: #072051;
+        }
+
+        /* Footer */
+        footer {
+            background: #0972cd; /* Footer midab kala duwan */
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px 20px 20px;
+            margin-top: 50px;
+        }
+
+        footer h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        footer .social-icons a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1.5em;
+            transition: 0.3s;
+        }
+
+        footer .social-icons a:hover {
+            color: #f4d03f;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(30px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        @media(max-width: 900px) {
+            .contact-container {
+                flex-direction: column;
+            }
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            header nav {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+ <a href="home-pae.html">
+        <img src="c:\Users\hp\Videos\photo for fun\download.svg" alt="Job Portal" class="logo-img" width="200">    </a>
+    
+</header>
+
+<section class="contact-container">
+
+    <!-- Admin Contact Info -->
+    <div class="contact-info">
+        <h2>Admin Contact Information</h2>
+        <p><i class="fas fa-map-marker-alt"></i> country: Muqdisho, Somalia</p>
+        <p><i class="fas fa-phone"></i> Mobile: +252 61 234 5678</p>
+        <p><i class="fas fa-envelope"></i> Email: info@jobportal.com</p>
+        <p><i class="fas fa-clock"></i> hours work: monday - friday , 8:00 AM - 5:00 PM</p>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form">
+        <h2>Have questions or feedback? We'd love to hear from you.</h2>
+        <form>
+            <input type="text" placeholder="Magacaaga" required>
+            <input type="email" placeholder="Email-kaaga" required>
+            <input type="text" placeholder="Mowduuca" required>
+            <textarea rows="6" placeholder="Fariintaada" required></textarea>
+            <button type="submit">Dir Fariinta</button>
+        </form>
+    </div>
+
+</section>
+
+<footer>
+    <h3>Job Portal</h3>
+    <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    <p>&copy; 2026 Job Portal. Dhammaan Xuquuqda Waa La Xafiday.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+/* --- 1. VARIABLES (COLORS FROM YOUR IMAGE) --- */
+:root {
+    --col-navy: #0D2554;       /* Darkest Blue */
+    --col-primary: #154C8A;    /* Medium Dark Blue */
+    --col-accent: #4F90CD;     /* Medium Blue */
+    --col-pale: #88B9DD;       /* Light Blue */
+    --col-light: #C4E7F5;      /* Very Light Blue */
+    --col-bg: #F0F6FA;         /* Page Background */
+    --col-white: #ffffff;
+    --col-text: #333333;
+    --shadow-card: 0 10px 20px rgba(13, 37, 84, 0.1);
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--col-bg);
+    color: var(--col-text);
+    line-height: 1.6;
+}
+
+a { text-decoration: none; transition: 0.3s; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+
+/* --- 2. LAYOUT UTILITIES --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- 3. HEADER & NAVIGATION --- */
+header {
+    background-color: var(--col-navy);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo { display: flex; align-items: center; gap: 10px; color: var(--col-white); font-size: 1.5rem; font-weight: bold; }
+.logo span { color: var(--col-light); }
+
+nav ul { display: flex; gap: 20px; }
+nav ul li a { color: var(--col-light); font-weight: 500; padding: 8px 12px; border-radius: 6px; }
+nav ul li a:hover, nav ul li a.active { background-color: rgba(255,255,255,0.1); color: var(--col-white); }
+
+.auth-buttons { display: flex; gap: 15px; }
+.btn { padding: 10px 25px; border-radius: 6px; font-weight: 600; cursor: pointer; border: none; }
+.btn-register { background-color: var(--col-primary); color: white; }
+.btn-register:hover { background-color: var(--col-accent); }
+.btn-login { background-color: transparent; border: 1px solid var(--col-light); color: var(--col-light); }
+.btn-login:hover { background-color: var(--col-light); color: var(--col-navy); }
+
+/* --- 4. HERO SECTION --- */
+.hero {
+    background: linear-gradient(135deg, var(--col-navy), var(--col-primary));
+    color: white;
+    padding: 100px 0 160px; /* Extra padding bottom for search overlap */
+    text-align: center;
+}
+
+.hero h1 { font-size: 3rem; margin-bottom: 15px; }
+.hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto; color: var(--col-light); }
+
+/* --- 5. SEARCH CONTAINER (Floating) --- */
+.search-container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: -80px auto 60px; /* Negative margin pulls it up */
+    position: relative;
+    z-index: 10;
+}
+
+.search-form { display: flex; flex-wrap: wrap; gap: 15px; align-items: flex-end; }
+.search-group { flex: 1; min-width: 250px; }
+.search-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--col-navy); }
+.search-input {
+    width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;
+}
+.search-input:focus { outline: 2px solid var(--col-accent); border-color: transparent; }
+.btn-search {
+    background-color: var(--col-navy); color: white; padding: 15px 40px; font-size: 1rem;
+}
+.btn-search:hover { background-color: var(--col-primary); }
+
+/* --- 6. JOB LISTINGS --- */
+.section-title { text-align: center; margin-bottom: 40px; }
+.section-title h2 { font-size: 2.2rem; color: var(--col-navy); margin-bottom: 10px; }
+.section-title p { color: #666; }
+
+.job-listings {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 25px; margin-bottom: 80px;
+}
+
+.job-card {
+    background: white; border-radius: 12px; padding: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-left: 5px solid var(--col-accent);
+    transition: 0.3s;
+}
+.job-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-card); }
+.job-title { font-size: 1.3rem; color: var(--col-navy); margin-bottom: 5px; }
+.company-name { color: var(--col-primary); font-weight: 600; margin-bottom: 15px; }
+.job-location { color: #666; font-size: 0.9rem; margin-bottom: 15px; }
+.job-location i { color: var(--col-accent); margin-right: 5px; }
+.btn-apply {
+    width: 100%; padding: 10px; background: var(--col-bg); color: var(--col-primary); border: none; font-weight: 600; border-radius: 6px; cursor: pointer;
+}
+.btn-apply:hover { background: var(--col-primary); color: white; }
+
+/* --- 7. TOP COMPANIES GRID (New) --- */
+.companies-section {
+    background-color: white;
+    padding: 60px 0;
+    margin-bottom: 0;
+}
+
+.company-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.company-card {
+    background: var(--col-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.company-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+
+.card-banner { height: 100px; background: var(--col-pale); position: relative; }
+.card-banner img { width: 100%; height: 100%; object-fit: cover; opacity: 0.5; mix-blend-mode: multiply;}
+
+.card-logo {
+    width: 70px; height: 70px; background: white; border-radius: 12px;
+    position: absolute; bottom: -35px; left: 20px; padding: 5px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); object-fit: contain;
+}
+
+.card-body { padding: 45px 20px 20px; text-align: left; }
+.card-body h3 { color: var(--col-navy); font-size: 1.2rem; margin-bottom: 5px; }
+.card-body .tag { font-size: 0.8rem; color: var(--col-accent); font-weight: bold; text-transform: uppercase; display: block; margin-bottom: 10px; }
+.card-body p { font-size: 0.9rem; color: #666; margin-bottom: 15px; }
+.btn-view { display: block; text-align: center; background: white; border: 1px solid var(--col-primary); color: var(--col-primary); padding: 8px; border-radius: 6px; font-weight: 600; }
+.btn-view:hover { background: var(--col-primary); color: white; }
+
+/* --- 8. FOOTER --- */
+footer {
+    background-color: var(--col-navy);
+    color: var(--col-light);
+    padding: 60px 0 20px;
+}
+
+.footer-container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; margin-bottom: 40px; }
+.footer-column { flex: 1; min-width: 200px; }
+.footer-column h3 { color: white; margin-bottom: 20px; border-bottom: 2px solid var(--col-primary); display: inline-block; padding-bottom: 5px; }
+.footer-column ul li { margin-bottom: 10px; }
+.footer-column ul li a { color: var(--col-light); display: flex; align-items: center; gap: 10px; }
+.footer-column ul li a:hover { color: white; transform: translateX(5px); }
+.social-icons { margin-top: 20px; display: flex; gap: 10px; }
+.social-icons a { width: 35px; height: 35px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 50%; color: white; }
+.social-icons a:hover { background: var(--col-accent); }
+
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; font-size: 0.9rem; }
+
+/* Mobile */
+@media (max-width: 768px) {
+    .header-container { flex-direction: column; gap: 15px; }
+    .hero { padding: 60px 0 100px; }
+    .hero h1 { font-size: 2rem; }
+    .search-container { margin-top: -50px; padding: 20px; }
+    /* .footer-container { flex-direction: column; } */
+}

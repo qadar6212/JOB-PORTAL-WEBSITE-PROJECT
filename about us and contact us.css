@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f5f7fa;
+    color: #333;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #0a3d62, #1e90ff);
+    color: #fff;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.header h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 18px;
+}
+
+/* About Section */
+.about {
+    padding: 60px 20px;
+}
+
+.about-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.about-text h2 {
+    color: #0a3d62;
+    margin-bottom: 10px;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Boxes */
+.about-boxes {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.box {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.box i {
+    font-size: 35px;
+    color: #1e90ff;
+    margin-bottom: 15px;
+}
+
+.box h3 {
+    margin-bottom: 10px;
+    color: #0a3d62;
+}
+
+/* Footer */
+.footer {
+    background: #0a3d62;
+    color: #fff;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+.footer .social {
+    margin-top: 15px;
+}
+
+.footer .social a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.footer .social a:hover {
+    color: #1e90ff;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+}
+.info-box{
+  padding:24px;
+  background:#fff;
+  border-radius:12px;
+  text-align:center;
+  box-shadow: 0 8px 24px rgba(16,24,40,0.08);
+  transition: box-shadow 300ms ease, transform 300ms ease;
+}
+/* ===== Animations ===== */
+
+/* Fade + slide down header */
+.header {
+    animation: fadeDown 1s ease-in-out;
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* About text animation */
+.about-text {
+    animation: fadeLeft 1.2s ease;
+}
+
+@keyframes fadeLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Boxes animation */
+.box {
+    animation: fadeUp 1s ease forwards;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.box:nth-child(1) { animation-delay: 0.2s; }
+.box:nth-child(2) { animation-delay: 0.4s; }
+.box:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover effect (professional bank feel) */
+.box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Social icons animation */
+.footer .social a {
+    display: inline-block;
+}
+
+.footer .social a:hover {
+    transform: scale(1.2) rotate(5deg);
+}
+.info-box .icon{
+  font-size:36px;
+  color:#06343a;
+  margin-bottom:16px;
+  transition: box-shadow 300ms ease, transform 300ms ease;
+}

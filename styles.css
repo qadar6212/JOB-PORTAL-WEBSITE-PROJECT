@@ -1,0 +1,176 @@
+:root{
+  /* Palette sampled from your image */
+  --color-1: #05033b; /* darkest navy - header */
+  --color-2: #256b93; /* deep blue - footer / accents */
+  --color-3: #4aa0d9; /* mid-blue - cards / apply */
+  --color-4: #cfeef6; /* pale cyan - accents */
+
+  --muted: #607080;
+  --card-bg: #ffffff;
+  --success: #15a46f;
+  --danger: #d64545;
+  --coming: #f39c12;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #f7fbfe, #eef9ff);
+  color:#092032;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.35;
+}
+
+/* Layout */
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.site-header{
+  background: var(--color-1);
+  color: white;
+  box-shadow: 0 6px 18px rgba(3,19,37,0.15);
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;padding:18px 20px;
+}
+.logo{display:flex;align-items:center;gap:12px}
+.logo svg{border-radius:6px}
+.brand{font-weight:700;letter-spacing:0.2px}
+.top-nav .nav-link{color:rgba(255,255,255,0.85);text-decoration:none;margin-left:14px}
+.top-nav .nav-link.active{background:rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px}
+
+/* Controls - radios are visible labels (radios themselves hidden) */
+.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:22px 0}
+.filter-radio{
+  position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;
+}
+.filter-label{
+  display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;border:1px solid rgba(6,30,59,0.08);
+  background:transparent;color:var(--color-1);font-weight:700;cursor:pointer;user-select:none;
+  transition:all 160ms ease;
+}
+.filter-label:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(6,30,59,0.06)}
+#filter-all:checked + .filter-label,
+#filter-open:checked + .filter-label,
+#filter-coming-soon:checked + .filter-label,
+#filter-closed:checked + .filter-label{
+  background: linear-gradient(90deg,var(--color-2),var(--color-3));
+  color:white;border-color:transparent;box-shadow:0 6px 20px rgba(37,107,147,0.12);
+}
+
+/* small note */
+.note{margin:0;color:var(--muted);font-size:0.9rem;margin-left:12px}
+
+/* Jobs grid */
+.jobs-grid{display:grid;grid-template-columns:1fr;gap:14px;align-items:start}
+@media(min-width:760px){
+  .jobs-grid{grid-template-columns:1fr 1fr}
+}
+
+.job-card{
+  display:flex;flex-direction:row;gap:12px;align-items:flex-start;padding:14px;border-radius:12px;background:var(--card-bg);
+  box-shadow:0 6px 18px rgba(10,26,46,0.06);transition:transform 220ms cubic-bezier(.2,.9,.3,1),box-shadow 220ms,opacity 220ms;
+  transform: translateY(0);
+  border:1px solid rgba(6,30,59,0.04);
+}
+.job-card:focus{outline:3px solid rgba(74,160,217,0.14);outline-offset:4px}
+.job-card:hover{
+  transform: translateY(-6px);
+  box-shadow:0 18px 40px rgba(6,30,59,0.10);
+}
+.job-card-left{flex:1}
+.job-title{margin:0 0 6px;font-size:1.05rem}
+.job-meta{margin:0;color:var(--muted);font-size:0.9rem}
+.job-desc{margin:8px 0 0;color:#2f3f48;font-size:0.9rem}
+
+/* job info chips */
+.job-info{list-style:none;padding:0;margin:10px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.job-info-item{
+  display:inline-flex;align-items:center;gap:8px;padding:6px 8px;border-radius:999px;background:rgba(6,30,59,0.03);
+  color:var(--muted);font-size:0.82rem;
+}
+.job-info-item .info-icon{color:var(--color-2);opacity:0.95;flex:0 0 auto}
+
+/* right column */
+.job-card-right{width:220px;display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+
+/* badges */
+.badge{
+  display:inline-block;padding:6px 10px;border-radius:999px;font-weight:700;font-size:0.8rem;color:white;
+  box-shadow:0 6px 14px rgba(6,30,59,0.06);
+}
+.badge.open{background: linear-gradient(90deg, #2ecc71, var(--success))}
+.badge.closed{background: #9aa6b0}
+.badge.coming-soon{background: linear-gradient(90deg,#ffb84d,var(--coming));animation:pulse 1800ms infinite ease-in-out}
+
+/* Apply button with icon */
+.apply-btn{
+  display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;border:0;background:var(--color-3);color:var(--color-1);font-weight:700;
+  text-decoration:none;cursor:pointer;box-shadow:0 8px 20px rgba(75,160,217,0.18);transition:transform 180ms, box-shadow 180ms,opacity 180ms;position:relative;
+}
+.apply-btn:hover{transform:translateY(-3px);box-shadow:0 16px 28px rgba(75,160,217,0.22)}
+.apply-btn .apply-icon{color:var(--color-1);filter:drop-shadow(0 1px 0 rgba(255,255,255,0.06))}
+
+/* alternative styles */
+.apply-btn.ghost{background:transparent;border:1px dashed rgba(6,30,59,0.06);color:var(--muted)}
+.apply-btn.closed{background:#eef3f6;color:#98a6b3;cursor:not-allowed;box-shadow:none}
+
+/* shimmer on hover (pure CSS) */
+.apply-btn::after{
+  content:"";position:absolute;left:-40%;top:0;bottom:0;width:40%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.28),transparent);transform:skewX(-18deg);opacity:0;transition:opacity 220ms, transform 600ms;
+}
+.apply-btn:hover::after{opacity:1;transform:translateX(300%) skewX(-18deg)}
+
+/* Footer */
+.site-footer{
+  margin-top:40px;padding:18px 20px;background:var(--color-2);color:white;
+}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto}
+
+/* Animations */
+@keyframes pulse{
+  0%{transform:scale(1);box-shadow:0 0 0 0 rgba(243,156,18,0.20)}
+  70%{transform:scale(1.04);box-shadow:0 0 0 10px rgba(243,156,18,0)}
+  100%{transform:scale(1);box-shadow:0 0 0 0 rgba(243,156,18,0)}
+}
+
+/* Disabled / dimmed look for closed jobs */
+.job-card[data-status="closed"]{opacity:0.6}
+
+/* --- FILTER LOGIC (pure CSS) ---
+   The radio inputs at the top control visibility of job cards.
+   Inputs must be placed before .jobs-grid in the DOM (they're siblings), so we can use checked ~ .jobs-grid.
+*/
+
+/* Show all (default) */
+#filter-all:checked ~ .jobs-grid article{display:flex;opacity:1;pointer-events:auto}
+
+/* Open only */
+#filter-open:checked ~ .jobs-grid article{display:none}
+#filter-open:checked ~ .jobs-grid article[data-status="open"]{display:flex}
+
+/* Coming Soon only */
+#filter-coming-soon:checked ~ .jobs-grid article{display:none}
+#filter-coming-soon:checked ~ .jobs-grid article[data-status="coming-soon"]{display:flex}
+
+/* Closed only */
+#filter-closed:checked ~ .jobs-grid article{display:none}
+#filter-closed:checked ~ .jobs-grid article[data-status="closed"]{display:flex}
+
+/* ensure display remains flex for layout on larger screens */
+@media(min-width:760px){
+  #filter-open:checked ~ .jobs-grid article,
+  #filter-coming-soon:checked ~ .jobs-grid article,
+  #filter-closed:checked ~ .jobs-grid article,
+  #filter-all:checked ~ .jobs-grid article{
+    display:flex;
+  }
+}
+
+/* small responsive adjustments */
+@media(max-width:640px){
+  .job-card{flex-direction:column}
+  .job-card-right{width:100%;align-items:flex-start}
+  .job-desc{text-align:left}
+}

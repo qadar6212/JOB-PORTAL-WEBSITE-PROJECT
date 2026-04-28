@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JobNest — Jobs</title>
+  <link rel="icon" href="c:\Users\hp\Videos\photo for fun\download (1).svg" type="image/-icion">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="logo"><img src="download (1).svg" alt="JobNest" width="50"  srcset="">
+       
+        </svg>
+        <span class="brand">JOB-NEST</span>
+      </div>
+
+      <nav class="top-nav" aria-label="Main navigation">
+        <a class="nav-link" href="home-page replacment.html">Home</a>
+        <a class="nav-link active" href="jobs of website.html">Jobs</a>
+        <a class="nav-link" href="about us.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main" id="main">
+    <section class="controls" aria-label="Job filters">
+      <!-- CSS-only radio filters (inputs are placed before .jobs-grid so sibling selectors in CSS work) -->
+      <input type="radio" name="status" id="filter-all" class="filter-radio" checked>
+      <label for="filter-all" class="filter-label">All</label>
+
+      <input type="radio" name="status" id="filter-open" class="filter-radio">
+      <label for="filter-open" class="filter-label">Open</label>
+
+      <input type="radio" name="status" id="filter-coming-soon" class="filter-radio">
+      <label for="filter-coming-soon" class="filter-label">Coming Soon</label>
+
+      <input type="radio" name="status" id="filter-closed" class="filter-radio">
+      <label for="filter-closed" class="filter-label">Closed</label>
+
+      <p class="note">Tip: use your browser's Find (Ctrl/Cmd+F) to search job titles since this page is JS-free.</p>
+    </section>
+
+    <!-- Jobs list (the radios above are siblings of this element; CSS uses checked ~ .jobs-grid to filter) -->
+    <section class="jobs-grid" aria-live="polite">
+      <!-- Each job card must use data-status="open|coming-soon|closed" -->
+      <article class="job-card" data-status="open" tabindex="0">
+        <div class="job-card-left">
+          <h3 class="job-title">Frontend Engineer</h3>
+          <p class="job-meta">Engineering · Remote · Full-time</p>
+
+          <ul class="job-info" aria-hidden="false">
+            <li class="job-info-item">
+              <svg class="info-icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7v3l-1 1v1h16v-1l-1-1V9a7 7 0 0 0-7-7z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Remote
+            </li>
+            <li class="job-info-item">
+              <svg class="info-icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1v22" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+              $90k–120k
+            </li>
+            <li class="job-info-item">
+              <svg class="info-icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12M12 4v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              40 hrs/week
+            </li>
+          </ul>
+
+          <p class="job-desc">Build responsive UIs, ship components, and improve performance.</p>
+        </div>
+
+        <div class="job-card-right">
+          <span class="badge open">Open</span>
+          <a class="apply-btn" href="job apply test.html" aria-label="Apply to Frontend Engineer">
+            <svg class="apply-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+              <path d="M3 10.5v7.5a1 1 0 0 0 1 1h15a1 1 0 0 0 1-1v-7.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M7 7l5-4 5 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 3v11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Apply
+          </a>
+        </div>
+      </article>
+
+      <article class="job-card" data-status="open" tabindex="0">
+        <div class="job-card-left">
+          <h3 class="job-title">Backend Engineer</h3>
+          <p class="job-meta">Engineering · NYC · Full-time</p>
+
+          <ul class="job-info">
+            <li class="job-info-item"><svg class="info-icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7v3l-1 1v1h16v-1l-1-1V9a7 7 0 0 0-7-7z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg> NYC</li>
+            <li class="job-info-item"><svg class="info-icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1v22" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg> $110k–145k</li>
+            <li class="job-info-item"><svg class="info-icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12M12 4v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg> 40 hrs/week</li>
+          </ul>
+
+          <p class="job-desc">Design APIs, improve reliability, and work across services.</p>
+        </div>
+
+        <div class="job-card-right">
+          <span class="badge open">Open</span>
+          <a class="apply-btn" href="job apply test.html" aria-label="Apply to Backend Engineer">
+            <svg class="apply-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+              <path d="M3 10.5v7.5a1 1 0 0 0 1 1h15a1 1 0 0 0 1-1v-7.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M7 7l5-4 5 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 3v11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Apply
+          </a>
+        </div>
+      </article>
+
+      <article class="job-card" data-status="coming-soon" tabindex="0">
+        <div class="job-card-left">
+          <h3 class="job-title">Design Manager</h3>
+          <p class="job-meta">Design · San Francisco · Manager</p>
+
+          <ul class="job-info">
+            <li class="job-info-item"><svg class="info-icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7v3l-1 1v1h16v-1l-1-1V9a7 7 0 0 0-7-7z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg> San Francisco</li>
+            <li class="job-info-item"><svg class="info-icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1v22" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg> $140k–170k</li>
+            <li class="job-info-item"><svg class="info-icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12M12 4v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg> 35–40 hrs/week</li>
+          </ul>
+
+          <p class="job-desc">Lead product designers and ship delightful experiences.</p>
+        </div>
+
+        <div class="job-card-right">
+          <span class="badge coming-soon">Coming Soon</span>
+          <button class="apply-btn ghost" type="button" disabled aria-disabled="true">Notify Me</button>
+        </div>
+      </article>
+
+      <article class="job-card" data-status="closed" tabindex="0">
+        <div class="job-card-left">
+          <h3 class="job-title">QA Engineer</h3>
+          <p class="job-meta">Quality · Remote · Contract</p>
+
+          <ul class="job-info">
+            <li class="job-info-item"><svg class="info-icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7v3l-1 1v1h16v-1l-1-1V9a7 7 0 0 0-7-7z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Remote</li>
+            <li class="job-info-item"><svg class="info-icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1v22" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg> $55/hr</li>
+            <li class="job-info-item"><svg class="info-icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12M12 4v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg> 20 hrs/week</li>
+          </ul>
+
+          <p class="job-desc">Help keep product quality high through automated tests.</p>
+        </div>
+
+        <div class="job-card-right">
+          <span class="badge closed">Closed</span>
+          <button class="apply-btn closed" type="button" disabled aria-disabled="true">Closed</button>
+        </div>
+      </article>
+
+      <!-- Repeat other jobs below with the same job-info structure -->
+      <article class="job-card" data-status="open" tabindex="0">
+        <div class="job-card-left">
+          <h3 class="job-title">Product Manager</h3>
+          <p class="job-meta">Product · London · Full-time</p>
+
+          <ul class="job-info">
+            <li class="job-info-item">London</li>
+            <li class="job-info-item">$95k–125k</li>
+            <li class="job-info-item">40 hrs/week</li>
+          </ul>
+
+          <p class="job-desc">Shape product strategy and drive cross-functional programs.</p>
+        </div>
+
+        <div class="job-card-right">
+          <span class="badge open">Open</span>
+          <a class="apply-btn" href="job apply test.html">Apply</a>
+        </div>
+      </article>
+
+      <article class="job-card" data-status="coming-soon" tabindex="0">
+        <div class="job-card-left">
+          <h3 class="job-title">Data Scientist</h3>
+          <p class="job-meta">Data · Remote · Full-time</p>
+
+          <ul class="job-info">
+            <li class="job-info-item">Remote</li>
+            <li class="job-info-item">$120k–150k</li>
+            <li class="job-info-item">40 hrs/week</li>
+          </ul>
+
+          <p class="job-desc">Analyze behavior and build ML models for personalization.</p>
+        </div>
+
+        <div class="job-card-right">
+          <span class="badge coming-soon">Coming Soon</span>
+          <button class="apply-btn ghost" type="button" disabled aria-disabled="true">Notify Me</button>
+        </div>
+      </article>
+ <article class="job-card" data-status="coming-soon" tabindex="0">
+        <div class="job-card-left">
+          <h3 class="job-title">Data Scientist</h3>
+          <p class="job-meta">Data · Remote · Full-time</p>
+
+          <ul class="job-info">
+            <li class="job-info-item">Remote</li>
+            <li class="job-info-item">$120k–150k</li>
+            <li class="job-info-item">40 hrs/week</li>
+          </ul>
+
+          <p class="job-desc">this job will be available in aview days .</p>
+        </div>
+
+        <div class="job-card-right">
+          <span class="badge coming-soon">Coming Soon</span>
+          <button class="apply-btn ghost" type="button" disabled aria-disabled="true">Notify Me</button>
+        </div>
+      </article>
+
+      <!-- ... additional job cards ... -->
+
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div>© 2026 JobNest Careers</div>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

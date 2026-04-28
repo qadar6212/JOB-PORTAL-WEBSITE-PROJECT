@@ -1,0 +1,150 @@
+:root{
+  /* palette from your image (dark -> light) */
+  --dark: #072347;   /* very dark navy */
+  --mid-1: #14578a;  /* deep blue */
+  --mid-2: #2f7fb7;  /* medium blue */
+  --mid-3: #6fb3e6;  /* light blue */
+  --light: #d6f3fb;  /* very pale cyan */
+
+  --bg: var(--light);
+  --card: #ffffff;
+  --muted: #0f3f5f;
+  --accent: var(--mid-2);
+  --container-gap:1rem;
+  --radius:12px;
+  --text: #0b2336;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:linear-gradient(180deg,var(--light),#f0fbff 60%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+}
+
+/* layout */
+.container{max-width:1100px;margin:0 auto;padding:1rem}
+.site-header{
+  background:linear-gradient(90deg,var(--dark),var(--mid-1));
+  color:var(--light);
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:.75rem;
+  padding:1.25rem 1rem;
+}
+.brand h1{margin:0;font-size:1.5rem}
+.subtitle{margin:0;color:rgba(214,243,251,0.95);font-weight:500}
+
+/* header button */
+.header-actions .btn{
+  background:transparent;
+  border:1px solid rgba(214,243,251,0.12);
+  color:var(--light);
+  padding:.5rem .8rem;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+}
+.header-actions .btn:hover,
+.header-actions .btn:focus{
+  background:rgba(214,243,251,0.06);
+  outline:3px solid rgba(47,127,183,0.12);
+}
+
+/* grid */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1rem;padding:1rem 0;
+}
+
+/* company card */
+.company-card{
+  display:flex;gap:1rem;align-items:center;
+  background:linear-gradient(180deg,rgba(255,255,255,0.96),#fbfeff);
+  padding:.8rem;border-radius:var(--radius);
+  text-decoration:none;color:inherit;border:1px solid rgba(10,33,51,0.06);
+  transition:transform .15s ease,box-shadow .15s ease;
+  box-shadow:0 4px 18px rgba(4,20,34,0.04);
+}
+.company-card:focus,
+.company-card:hover{transform:translateY(-5px);box-shadow:0 14px 40px rgba(4,20,34,0.08);outline:none}
+.logo{
+  width:56px;height:56px;border-radius:12px;display:inline-grid;place-items:center;
+  background:var(--dark);color:var(--light);font-weight:700;font-size:14px;flex:0 0 56px;
+}
+.logo.large{width:84px;height:84px;border-radius:14px;font-size:20px}
+.initials{display:inline-block}
+
+/* content */
+.card-body h3{margin:0;font-size:1.05rem}
+.muted{color:var(--muted);margin:.25rem 0}
+.jobs-count{font-size:.9rem;color:var(--mid-2);margin:0}
+
+/* divider */
+.divider{border:0;height:1px;background:transparent;margin:1rem 0}
+
+/* details: hidden by default; shown via :target */
+.details{position:relative;padding-bottom:3rem}
+.company-detail{display:none;background:var(--card);padding:1.25rem;border-radius:var(--radius);border:1px solid rgba(10,33,51,0.04);box-shadow:0 8px 36px rgba(4,20,34,0.06);margin-bottom:1rem}
+.company-detail:target{display:block}
+
+/* back link */
+.back{display:inline-block;margin-bottom:.75rem;color:var(--mid-2);text-decoration:none}
+.back:focus, .back:hover{text-decoration:underline}
+
+/* company head */
+.company-head{display:flex;gap:1rem;align-items:center}
+.company-desc{margin:.75rem 0 1rem}
+
+/* jobs list */
+.jobs-list{list-style:none;padding:0;margin:0;display:grid;gap:.6rem}
+.job{display:flex;justify-content:space-between;align-items:center;padding:.6rem;border-radius:8px;border:1px solid rgba(10,33,51,0.03);background:linear-gradient(180deg,rgba(111,179,230,0.06),transparent)}
+.job-left h4{margin:0}
+.job-left .muted{margin:0;font-size:.9rem}
+.job-right{text-align:right}
+.salary{margin:0;font-weight:600;color:var(--dark)}
+.apply{display:inline-block;margin-top:.4rem;padding:.35rem .6rem;background:var(--mid-2);color:white;border-radius:6px;text-decoration:none;font-size:.9rem}
+.apply:hover{opacity:.95}
+
+/* responsive tweaks */
+@media (max-width:720px){
+  .company-head{flex-direction:row}
+  .job{flex-direction:column;align-items:flex-start}
+  .job-right{text-align:left;margin-top:.5rem}
+}
+
+/* footer */
+.site-footer{
+  margin-top:2rem;
+  background:linear-gradient(90deg,var(--mid-1),var(--mid-3));
+  color:var(--light);
+  padding:1.25rem 0;
+  border-top:1px solid rgba(255,255,255,0.06);
+}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.footer-left strong{font-size:1.05rem}
+.footer-left .small{margin:0;color:rgba(214,243,251,0.9)}
+.footer-right .social{display:flex;gap:.6rem}
+.social-link{
+  display:inline-grid;place-items:center;width:40px;height:40px;border-radius:8px;
+  background:rgba(255,255,255,0.06);color:var(--light);text-decoration:none;border:1px solid rgba(255,255,255,0.06)
+}
+.social-link svg{display:block}
+.social-link:focus{outline:3px solid rgba(111,179,230,0.18);outline-offset:2px}
+
+/* small screens */
+@media (max-width:640px){
+  .header-inner, .footer-inner{flex-direction:column;align-items:flex-start}
+  .footer-right{margin-top:.6rem}
+  .grid{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+}
